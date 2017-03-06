@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Org.sskru.domain">
+  <ClassDiagramComponents>
+    <Class name="RealImage" package="Org.sskru.domain" visibility="public" xPosition="171.0" yPosition="238.0">
+      <Fields>
+        <Field name="fileName" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="RealImage" returnType="void" visibility="public"/>
+        <Method name="display" returnType="void" visibility="public"/>
+        <Method name="loadFromDisk" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProxyImage" package="Org.sskru.domain" visibility="public" xPosition="581.0" yPosition="238.0">
+      <Fields>
+        <Field name="realImage" type="RealImage" visibility="public"/>
+        <Field name="fileName" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="ProxyImage" returnType="void" visibility="public"/>
+        <Method name="display" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProxyPatternDemo" package="Org.sskru.domain" visibility="public" xPosition="793.0" yPosition="270.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Image" package="Org.sskru.domain" visibility="public" xPosition="372.0" yPosition="55.0">
+      <Methods>
+        <Method name="display" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Org.sskru.domain.RealImage" target="Org.sskru.domain.Image"/>
+    <UseRelation name="asks" source="Org.sskru.domain.ProxyPatternDemo" target="Org.sskru.domain.ProxyImage" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Org.sskru.domain.ProxyImage" target="Org.sskru.domain.Image"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
